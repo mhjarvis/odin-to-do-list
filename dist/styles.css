@@ -49,6 +49,7 @@ header {
 
 .logo {
     font-size: 5rem;
+    font-weight: 600;
     position: relative;
     margin: 2rem;
 }
