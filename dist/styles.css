@@ -8,6 +8,17 @@
 :root {
     font-size: 10px;
     font-family: 'Noto Serif', serif;
+    
+    /************** VARIABLES ***************/
+    --jet: #2d2d2a;
+    --davys-gray: #4c4c47;
+    --cool-grey: #848fa5;
+    --bittersweet-shimmer: #c14953;
+    --bone: #e5dcc5;
+}
+
+body {
+    background-color: var(--bone);
 }
 
 .center {
@@ -18,11 +29,11 @@
 
 a {
     text-decoration: none;
-    color: black;
+    color: var(--jet);
 }
 
 a:hover {
-    color: gray;
+    color: var(--bittersweet-shimmer);
 }
 
 
@@ -32,7 +43,7 @@ a:hover {
 ********************************************/
 
 header {
-    background-color: gray;
+    background-color: var();
     
 }
 
