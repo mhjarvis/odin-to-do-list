@@ -1,6 +1,10 @@
 @import url(../src/stylesheets/reset.css);
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
+/********************************************
+                    GENERAL
+********************************************/
+
 :root {
     font-size: 10px;
     font-family: 'Noto Serif', serif;
@@ -21,14 +25,22 @@ a:hover {
     color: gray;
 }
 
-/********************************************
-                    GENERAL
-********************************************/
+
 
 /********************************************
                     HEADER
 ********************************************/
 
+header {
+    background-color: gray;
+    
+}
+
+.logo {
+    font-size: 5rem;
+    position: relative;
+    margin: 2rem;
+}
 /********************************************
                     ASIDE
 ********************************************/
