@@ -5,10 +5,12 @@
                     GENERAL
 ********************************************/
 
+* {
+    outline: 1px solid red;
+}
 :root {
     font-size: 10px;
     font-family: 'Noto Serif', serif;
-    
     /************** VARIABLES ***************/
     --jet: #2d2d2a;
     --davys-gray: #4c4c47;
@@ -18,7 +20,12 @@
 }
 
 body {
+    height: 100vh;
     background-color: var(--bone);
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: 1fr 10fr 1fr;
+
 }
 
 .center {
