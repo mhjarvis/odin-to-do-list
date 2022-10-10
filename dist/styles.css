@@ -83,10 +83,26 @@ aside {
     font-size: 3rem;
     font-weight: 700;
     border-bottom: 2px solid var(--jet);
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
 }
 
+.project-container {
+    font-size: 1.5rem;
+}
 
+.new-project-button {
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: var(--bittersweet-shimmer);
+    color: var(--bone);
+    border: none;
+    border-radius: 1rem;
+}
+
+.new-project-button:hover {
+    background-color: #d8737b;
+}
 
 /********************************************
                     FOOTER
