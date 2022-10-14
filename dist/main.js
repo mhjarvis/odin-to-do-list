@@ -1,1 +1,1 @@
-(()=>{let e=["default","project1"];!function(){const t=document.querySelector(".project-container");for(let n=0;n<e.length;n++){const o=document.createElement("div");o.innerHTML=e[n],o.id="project-"+n,t.appendChild(o),console.log(n)}}()})();
+(()=>{"use strict";let o=["test"];console.log(function(){return o}[1]),console.log(o)})();

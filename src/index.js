@@ -1,6 +1,11 @@
-let projects = ['default', 'project1'];
+import { getList, projects } from "./scripts/ToDoList";
 
-function createProjectSection() {
+
+console.log(getList[1]);
+console.log(projects);
+
+
+/* function createProjectSection() {
     const getProjectContainer = document.querySelector(".project-container");
 
     for(let i = 0; i < projects.length; i++) {
@@ -10,6 +15,7 @@ function createProjectSection() {
         getProjectContainer.appendChild(div);
         console.log(i);
     }
-};
+}; */
 
-createProjectSection();
+/* createProjectSection();
+ */

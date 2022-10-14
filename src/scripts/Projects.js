@@ -2,6 +2,7 @@
 
 class Projects {
     constructor() {
-        this.projects = [];
+        this.projects = ["default"];
     }
+
 }
