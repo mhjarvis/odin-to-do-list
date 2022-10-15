@@ -1,4 +1,5 @@
 import { displayProjects } from './ToDoList'
+import { createTask } from './Task'
 
 class Project {
     constructor(title, tasks) {
@@ -8,12 +9,16 @@ class Project {
 }
 
 let allProjects = [];
+
 let currentProject = allProjects[0];
 
-addProject('First', ["Eat Bfast", "Eat Dinner"]);
-addProject('Second', ["Eat Something", "Eat Nothing"]);
 
-console.log(allProjects);
+
+
+
+
+
+
 
 function addTaskToCurrentProject(task) {
     console.log(currentProject.tasks);
@@ -24,12 +29,13 @@ function addTaskToCurrentProject(task) {
 function addProject(title, tasks) {
     let temp = new Project(title, tasks);
     allProjects.push(temp);
+    displayProjects();
 }
 
-function getProjects() {
+function getProjectsArray() {
     return allProjects;
 }
 
 
 
-export { getProjects, addTaskToCurrentProject }
+export { addTaskToCurrentProject, addProject, getProjectsArray }

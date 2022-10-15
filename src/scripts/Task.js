@@ -1,5 +1,3 @@
-import { addTaskToCurrentProject } from './Project'
-
 // add notes
 // add checklist
 
@@ -12,4 +10,9 @@ class Task {
     }
 }
 
-export { }
+function createTask(title, description, dueDate, priority) {
+    let temp = new Task(title, description, dueDate, priority);
+    return temp;
+}
+
+export { createTask }
