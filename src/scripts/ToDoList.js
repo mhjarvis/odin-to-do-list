@@ -1,6 +1,5 @@
 import { getProjects } from './Project';
 
-
 const projectContainer = document.querySelector('.project-container');
 
 displayProjects();
@@ -14,5 +13,9 @@ function displayProjects() {
         p.innerHTML = projectsList[i].title;
         projectContainer.appendChild(p);
     }
+
+    // console.log(projectsList);
+
 }
 
+export { displayProjects }
