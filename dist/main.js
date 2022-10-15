@@ -1,1 +1,1 @@
-(()=>{"use strict";let o=["test"];console.log(function(){return o}[1]),console.log(o)})();
+(()=>{"use strict";console.log([])})();
