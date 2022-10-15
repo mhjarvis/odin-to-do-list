@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log([])})();
+(()=>{"use strict";class t{constructor(t){this.title=t}}let e=[];!function(l){let s=new t("Default");e.push(s)}();let l=e;console.log(l[0].title)})();

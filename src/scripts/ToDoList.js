@@ -1,3 +1,4 @@
-import { getProjects } from './Projects';
+import { getProjects } from './Project';
 
-console.log(getProjects());
+let temp = getProjects();
+console.log(temp[0].title);
