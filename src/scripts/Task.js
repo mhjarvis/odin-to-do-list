@@ -1,3 +1,4 @@
+import { addTaskToCurrentProject } from './Project'
 
 // add notes
 // add checklist
