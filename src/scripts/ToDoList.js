@@ -1,4 +1,4 @@
-import { addTaskToCurrentProject, addProject, getProjectsArray } from './Project';
+import { createNewTask, addTaskToCurrentProject, addProject, getProjectsArray, setActiveProject } from './Project';
 
 const projectContainer = document.querySelector('.project-container');
 
@@ -15,9 +15,13 @@ function displayProjects() {
     }
 }
 
+addProject('Default');
+setActiveProject(0);
 
-addProject('First');
-console.log(getProjectsArray())
+
+createNewTask('Work Out', 'get to the gym', '10/10/22', 'high');
+
+
 
 
 
