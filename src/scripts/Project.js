@@ -8,15 +8,14 @@ class Project {
 
 let allProjects = [];
 
-addProject('Default', ["Eat Bfast", "Eat Dinner"]);
+addProject('First', ["Eat Bfast", "Eat Dinner"]);
+addProject('Second', ["Eat Something", "Eat Nothing"]);
 
-// add new project
 function addProject(title, tasks) {
     let temp = new Project(title, tasks);
     allProjects.push(temp);
 }
 
-// getter to export projects array
 function getProjects() {
     return allProjects;
 }
