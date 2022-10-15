@@ -1,8 +1,10 @@
-import { getList, projects } from "./scripts/ToDoList";
+import { getProjects } from "./scripts/ToDoList";
 
 
-console.log(getList[1]);
-console.log(projects);
+
+
+
+
 
 
 /* function createProjectSection() {
