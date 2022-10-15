@@ -2,7 +2,7 @@ import { displayProjects } from './ToDoList'
 import { createTask } from './Task'
 
 class Project {
-    constructor(title, tasks) {
+    constructor(title, tasks = ['default']) {
         this.title = title;
         this.tasks = tasks;
     }
@@ -17,7 +17,10 @@ let currentProject = allProjects[0];
 
 
 
-
+function createNewTask(title, description, dueDate, priority) {
+    let newTask = createTask(title, description, dueDate, priority);
+    currentProject.tasks.push(newTask);
+}
 
 
 function addTaskToCurrentProject(task) {
@@ -36,6 +39,10 @@ function getProjectsArray() {
     return allProjects;
 }
 
+function setActiveProject(num) {
+    currentProject = allProjects[num];
+}
 
 
-export { addTaskToCurrentProject, addProject, getProjectsArray }
+
+export { createNewTask, addTaskToCurrentProject, addProject, getProjectsArray, setActiveProject }
