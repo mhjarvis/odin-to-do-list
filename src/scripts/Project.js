@@ -1,17 +1,18 @@
 
 class Project {
-    constructor(title) {
+    constructor(title, tasks) {
         this.title = title;
+        this.tasks = tasks;
     }
 }
 
 let allProjects = [];
 
-addProject('Default');
+addProject('Default', ["Eat Bfast", "Eat Dinner"]);
 
 // add new project
-function addProject(title) {
-    let temp = new Project(title);
+function addProject(title, tasks) {
+    let temp = new Project(title, tasks);
     allProjects.push(temp);
 }
 

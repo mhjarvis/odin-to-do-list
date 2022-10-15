@@ -1,1 +1,1 @@
-(()=>{"use strict";class t{constructor(t){this.title=t}}let e=[];!function(l){let s=new t("Default");e.push(s)}();let l=e;console.log(l[0].title)})();
+(()=>{"use strict";class t{constructor(t,s){this.title=t,this.tasks=s}}let s=[];!function(e,l){let a=new t("Default",["Eat Bfast","Eat Dinner"]);s.push(a)}();let e=s;console.log(e[0].tasks)})();
