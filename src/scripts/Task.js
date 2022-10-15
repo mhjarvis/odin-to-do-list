@@ -11,8 +11,10 @@ class Task {
 }
 
 function createTask(title, description, dueDate, priority) {
-    let temp = new Task(title, description, dueDate, priority);
-    return temp;
+    let arr = [];
+    let task = new Task(title, description, dueDate, priority);
+    arr.push(task);
+    return arr;
 }
 
 export { createTask }
