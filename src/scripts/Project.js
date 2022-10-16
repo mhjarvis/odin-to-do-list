@@ -29,7 +29,7 @@ function addTaskToCurrentProject(task) {
     displayProjects();
 }
 
-function addProject(title, tasks) {
+function createNewProject(title, tasks) {
     let temp = new Project(title, tasks);
     allProjects.push(temp);
     displayProjects();
@@ -45,4 +45,4 @@ function setActiveProject(num) {
 
 
 
-export { createNewTask, addTaskToCurrentProject, addProject, getProjectsArray, setActiveProject }
+export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject }

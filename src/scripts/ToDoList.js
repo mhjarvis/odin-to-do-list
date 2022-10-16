@@ -1,4 +1,4 @@
-import { createNewTask, addTaskToCurrentProject, addProject, getProjectsArray, setActiveProject } from './Project';
+import { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject } from './Project';
 
 const projectContainer = document.querySelector('.project-container');
 
@@ -15,7 +15,7 @@ function displayProjects() {
     }
 }
 
-addProject('Default');
+createNewProject('Default');
 setActiveProject(0);
 
 
