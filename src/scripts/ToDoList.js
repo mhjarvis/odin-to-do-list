@@ -1,11 +1,32 @@
 import { initializeListeners } from './EnventControl';
-import { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject } from './Project';
+import { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject } from './Project';
 
 const projectContainer = document.querySelector('.project-container');
+
+// initialize eventListeners
+initializeListeners();
+
+
+/************* Default filler - Delete Later ***********/
+
+// temporary actions - add initial default project and set active project to it
+createNewProject('Default');
+setActiveProject(0);
+// temporaary actions - create initial task and add to default project
+createNewTask('Work Out', 'get to the gym', '10/10/22', 'high');
+
+
+
+/*******************************************************/
+
+let test = getActiveProject().tasks.length;
+console.log(test);
 
 displayProjects();
 
 function displayProjects() {
+
+    projectContainer.innerHTML = '';
 
     let projectsList = getProjectsArray();
 
@@ -14,23 +35,16 @@ function displayProjects() {
         p.innerHTML = projectsList[i].title;
         projectContainer.appendChild(p);
     }
+
+/*     if(getActiveProject == undefined) {
+        return;
+    } else {
+        for(let i = 0; i < getActiveProject.tasks.length; i++) {
+            console.log("teest")
+        }        
+    } */
+
 }
-
-// initialize eventListeners
-initializeListeners();
-
-createNewProject('Default');
-setActiveProject(0);
-
-
-createNewTask('Work Out', 'get to the gym', '10/10/22', 'high');
-
-
-
-
-
-
-
 
 
 

@@ -43,6 +43,10 @@ function setActiveProject(num) {
     currentProject = allProjects[num];
 }
 
+function getActiveProject() {
+    return currentProject;
+}
 
 
-export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject }
+
+export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject }
