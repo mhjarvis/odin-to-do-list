@@ -1,3 +1,4 @@
+import { initializeListeners } from './EnventControl';
 import { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject } from './Project';
 
 const projectContainer = document.querySelector('.project-container');
@@ -14,6 +15,9 @@ function displayProjects() {
         projectContainer.appendChild(p);
     }
 }
+
+// initialize eventListeners
+initializeListeners();
 
 createNewProject('Default');
 setActiveProject(0);
