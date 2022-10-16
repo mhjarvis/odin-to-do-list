@@ -17,15 +17,14 @@ createNewProject('Week 1');
 setActiveProject(0);
 // temporaary actions - create initial task and add to default project
 createNewTask('Work Out', 'get to the gym', '10/10/22', 'high');
+createNewTask('Go to Sleep', 'by 8:00', '10/22/22', 'low');
 
 
 
 /*******************************************************/
 
-let test = getActiveProject().tasks.length;
-console.log(test);
-
 displayProjects();
+
 
 
 
@@ -50,9 +49,20 @@ function displayProjects() {
     } */
 
 }
-
+setActiveProject(0);
+console.log(getActiveProject().tasks[1][0].title)
+console.log(getActiveProject())
 
 function displayTasks() {
+
+    taskContainer.innerHTML = '';
+
+    //getActiveProject()
+
+    for(let i = 0; i < 2; i++) {
+
+    }
+
 
 }
 
