@@ -6,6 +6,11 @@ class Project {
         this.title = title;
         this.tasks = tasks;
     }
+        // default const for tasks needs to be reworked
+
+/*     setTask(arr) {
+        this.tasks = arr;
+    } */
 }
 
 let allProjects = [];
