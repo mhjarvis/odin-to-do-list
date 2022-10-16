@@ -10,7 +10,7 @@ class Project {
 
 let allProjects = [];
 
-let currentProject = allProjects[0];
+let currentProject = allProjects[0];    //temp solution
 
 
 
@@ -21,7 +21,6 @@ function createNewTask(title, description, dueDate, priority) {
     let newTask = createTask(title, description, dueDate, priority);
     currentProject.tasks.push(newTask);
 }
-
 
 function addTaskToCurrentProject(task) {
     console.log(currentProject.tasks);
