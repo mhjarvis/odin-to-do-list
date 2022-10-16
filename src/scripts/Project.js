@@ -2,7 +2,7 @@ import { displayProjects } from './ToDoList'
 import { createTask } from './Task'
 
 class Project {
-    constructor(title, tasks = ['default']) {
+    constructor(title, tasks = []) {
         this.title = title;
         this.tasks = tasks;
     }
