@@ -33,7 +33,9 @@ function displayProjects() {
 
     projectContainer.innerHTML = '';
 
+
     let projectsList = getProjectsArray();
+    console.log(projectsList);
 
     for(let i = 0; i < projectsList.length; i++) {
         const p = document.createElement('p');
