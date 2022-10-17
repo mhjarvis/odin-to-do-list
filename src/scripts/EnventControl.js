@@ -6,10 +6,22 @@ function initializeListeners() {
 
     // New Project button init
     const newProjectButton = document.querySelector('.new-project-button');
+    const addButton = document.querySelector('.add-button');
+    const cancelButton = document.querySelector('.cancel-button');
     
     newProjectButton.addEventListener('click', () => {
         toggleForm();
     });
+
+    // Add Button
+    addButton.addEventListener('click', () => {         // need to rework 
+        createNewProject();                         //createNewProject() to take 
+    })                                              //form info
+
+    // Cancel Button
+    cancelButton.addEventListener('click', () => {
+        
+    })
 
 
 
@@ -24,8 +36,6 @@ function toggleForm() {
     
     selectButton.style.display = 'none';
     selectForm.style.display = 'block';
-
-
 
 }
 
