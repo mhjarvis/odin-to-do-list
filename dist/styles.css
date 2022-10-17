@@ -114,6 +114,36 @@ aside {
     background-color: #d8737b;
 }
 
+/************** PROJECT FORM ***************/
+.project-form-container {
+
+}
+
+.project-form {
+    
+}
+
+.project-form input {
+    display: ;
+    margin-top: 1rem;
+    height: 2.5rem;
+    font-size: 2rem;
+    width: 90%;
+    font-family: 'Noto Serif', serif;
+}
+
+.project-action {
+
+}
+
+.add-button {
+
+}
+
+.cancel-button {
+    
+}
+
 /**************** SECTION ******************/
 
 
