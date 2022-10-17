@@ -4,23 +4,25 @@ import { createNewProject } from "./Project";
 
 function initializeListeners() {
 
-    // New Project button init
     const newProjectButton = document.querySelector('.new-project-button');
     const addButton = document.querySelector('.add-button');
     const cancelButton = document.querySelector('.cancel-button');
     
+    // New Project Button
     newProjectButton.addEventListener('click', () => {
         toggleForm();
     });
 
-    // Add Button
-    addButton.addEventListener('click', () => {         // need to rework 
-        createNewProject();                         //createNewProject() to take 
-    })                                              //form info
+    // Add-project Button
+    addButton.addEventListener('click', () => {
+        let value = document.querySelector('#project-name').value;
+        toggleForm();
+        createNewProject(value);
+    })
 
-    // Cancel Button
+    // Cancel-project Button
     cancelButton.addEventListener('click', () => {
-        
+        toggleForm();
     })
 
 
@@ -34,9 +36,14 @@ function toggleForm() {
     const selectButton = document.querySelector('.new-project-button');
     const selectForm = document.querySelector('.project-form-container');
     
+    if(selectButton.style.display == 'none') {
+        selectForm.style.display = 'none';
+        selectButton.style.display = 'block';
+        return;
+    }
+
     selectButton.style.display = 'none';
     selectForm.style.display = 'block';
-
 }
 
 export { initializeListeners }
