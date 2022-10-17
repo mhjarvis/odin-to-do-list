@@ -25,7 +25,7 @@ createNewTask('Go to Sleep', 'by 8:00', '10/22/22', 'low');
 /*******************************************************/
 
 displayProjects();
-
+displayTasks();
 
 
 
@@ -51,17 +51,23 @@ function displayProjects() {
 
 }
 setActiveProject(0);
-console.log(getActiveProject().tasks[0][0].title)
-console.log(getActiveProject())
+//console.log(getActiveProject().tasks[0][0].title)
+//console.log(getActiveProject().tasks.length)
 
 function displayTasks() {
 
     taskContainer.innerHTML = '';
+    let tasksLength = getActiveProject().tasks.length;
 
     //getActiveProject()
 
-    for(let i = 0; i < 2; i++) {
+    for(let i = 0; i < tasksLength; i++) {
+        //tasks[i][0] needs to get fixed as there is  unnecessary array depth
+        console.log(getActiveProject().tasks[i][0].title);
 
+        const div = document.createElement('div');
+        div.innerHTML = getActiveProject().tasks[i][0].title;
+        taskContainer.appendChild(div);
     }
 
 
