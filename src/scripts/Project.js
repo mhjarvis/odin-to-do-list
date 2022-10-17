@@ -20,19 +20,6 @@ let currentProject = allProjects[0];    //temp solution
 
 
 
-function addNewProject(name) {
-    const selectContainer = document.querySelector('.project-container');
-    const selectButton = document.querySelector('.new-project-button');
-    
-    selectButton.style.visibility = 'hidden';
-    
-    console.log("test");
-
-
-}
-
-
-
 
 
 
@@ -73,4 +60,4 @@ function getActiveProject() {
 
 
 
-export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject, addNewProject }
+export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject }
