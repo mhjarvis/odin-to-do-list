@@ -13,14 +13,14 @@ function initializeListeners() {
         toggleForm();
     });
 
-    // Add-project Button
+    // Add Project Button
     addButton.addEventListener('click', () => {
         let value = document.querySelector('#project-name').value;
         toggleForm();
         createNewProject(value);
     })
 
-    // Cancel-project Button
+    // Cancel Project Button
     cancelButton.addEventListener('click', () => {
         toggleForm();
     })
