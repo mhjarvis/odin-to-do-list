@@ -6,6 +6,7 @@ class Project {
         this.title = title;
         this.tasks = tasks;
     }
+
         // default const for tasks needs to be reworked
 
 /*     setTask(arr) {
@@ -16,12 +17,6 @@ class Project {
 let allProjects = [];
 
 let currentProject = allProjects[0];    //temp solution
-
-
-
-
-
-
 
 
 

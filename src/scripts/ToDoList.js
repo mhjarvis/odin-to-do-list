@@ -4,10 +4,7 @@ import { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsAr
 const projectContainer = document.querySelector('.project-container');
 const taskContainer = document.querySelector('.task-container')
 
-// initialize eventListeners
 initializeListeners();
-
-
 /************* Default filler - Delete Later ***********/
 
 // temporary actions - add initial default project and set active project to it
@@ -20,62 +17,44 @@ setActiveProject(0);
 createNewTask('Work Out', 'get to the gym', '10/10/22', 'high');
 createNewTask('Go to Sleep', 'by 8:00', '10/22/22', 'low');
 
-
-
 /*******************************************************/
 
 displayProjects();
 displayTasks();
 
 
-
 function displayProjects() {
 
-    projectContainer.innerHTML = '';
-
-
+    projectContainer.innerHTML = '';                // reset container
     let projectsList = getProjectsArray();
-    console.log(projectsList);
 
     for(let i = 0; i < projectsList.length; i++) {
         const p = document.createElement('p');
         p.innerHTML = projectsList[i].title;
         projectContainer.appendChild(p);
     }
-
-/*     if(getActiveProject == undefined) {
-        return;
-    } else {
-        for(let i = 0; i < getActiveProject.tasks.length; i++) {
-            console.log("teest")
-        }        
-    } */
-
+    highlightCurrentProject();
 }
-setActiveProject(0);
-//console.log(getActiveProject().tasks[0][0].title)
-//console.log(getActiveProject().tasks.length)
 
 function displayTasks() {
 
-    taskContainer.innerHTML = '';
+    taskContainer.innerHTML = '';                   // reset container
     let tasksLength = getActiveProject().tasks.length;
-
-    //getActiveProject()
 
     for(let i = 0; i < tasksLength; i++) {
         //tasks[i][0] needs to get fixed as there is  unnecessary array depth
-        console.log(getActiveProject().tasks[i][0].title);
+        //console.log(getActiveProject().tasks[i][0].title);
 
         const div = document.createElement('div');
         div.innerHTML = getActiveProject().tasks[i][0].title;
         taskContainer.appendChild(div);
     }
-
-
 }
 
-
+function highlightCurrentProject() {
+    let t = getActiveProject();
+    console.log(t)
+}
 
 
 
