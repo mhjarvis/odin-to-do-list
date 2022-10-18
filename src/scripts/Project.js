@@ -42,6 +42,7 @@ function getProjectsArray() {
 
 function setActiveProject(num) {
     currentProject = num;
+    displayProjects();
 }
 
 function getActiveProject() {

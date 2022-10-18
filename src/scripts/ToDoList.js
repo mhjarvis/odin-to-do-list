@@ -33,7 +33,7 @@ function displayProjects() {
         p.innerHTML = projectsList[i].title;
         projectContainer.appendChild(p);
     }
-    
+
     highlightCurrentProject();
 }
 
@@ -53,7 +53,13 @@ function displayTasks() {
 }
 
 function highlightCurrentProject() {
-    let t = getActiveProject();
+    
+    let activeProject = getActiveProject();
+
+    let projectContainerChildren = document.querySelector('.project-container').children;
+
+    projectContainerChildren.item(activeProject).style.color = 'white';
+        
 }
 
 
