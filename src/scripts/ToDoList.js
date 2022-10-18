@@ -33,27 +33,27 @@ function displayProjects() {
         p.innerHTML = projectsList[i].title;
         projectContainer.appendChild(p);
     }
+    
     highlightCurrentProject();
 }
 
 function displayTasks() {
 
     taskContainer.innerHTML = '';                   // reset container
-    let tasksLength = getActiveProject().tasks.length;
+    let tasksLength = getProjectsArray()[getActiveProject()].tasks.length;
 
     for(let i = 0; i < tasksLength; i++) {
         //tasks[i][0] needs to get fixed as there is  unnecessary array depth
         //console.log(getActiveProject().tasks[i][0].title);
 
         const div = document.createElement('div');
-        div.innerHTML = getActiveProject().tasks[i][0].title;
+        div.innerHTML = getProjectsArray()[getActiveProject()].tasks[i][0].title;
         taskContainer.appendChild(div);
     }
 }
 
 function highlightCurrentProject() {
     let t = getActiveProject();
-    console.log(t)
 }
 
 

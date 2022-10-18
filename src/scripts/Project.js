@@ -7,16 +7,12 @@ class Project {
         this.tasks = tasks;
     }
 
-        // default const for tasks needs to be reworked
-
-/*     setTask(arr) {
-        this.tasks = arr;
-    } */
+        // default const for tasks needs to be reworkedf
 }
 
 let allProjects = [];
 
-let currentProject = allProjects[0];    //temp solution
+let currentProject = 0;    //temp solution
 
 
 
@@ -26,12 +22,11 @@ let currentProject = allProjects[0];    //temp solution
 
 function createNewTask(title, description, dueDate, priority) {
     let newTask = createTask(title, description, dueDate, priority);
-    currentProject.tasks.push(newTask);
+    allProjects[currentProject].tasks.push(newTask);
 }
 
 function addTaskToCurrentProject(task) {
-    console.log(currentProject.tasks);
-    currentProject.tasks.push(task);
+    allProjects[currentProject].tasks.push(task);
     displayProjects();
 }
 
@@ -46,7 +41,7 @@ function getProjectsArray() {
 }
 
 function setActiveProject(num) {
-    currentProject = allProjects[num];
+    currentProject = num;
 }
 
 function getActiveProject() {
