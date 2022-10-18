@@ -58,7 +58,8 @@ function highlightCurrentProject() {
 
     let projectContainerChildren = document.querySelector('.project-container').children;
 
-    projectContainerChildren.item(activeProject).style.color = 'white';
+    projectContainerChildren.item(activeProject).style.color = 'var(--cool-grey)';
+    projectContainerChildren.item(activeProject).style.borderBottom = '3px solid var(--cool-grey)';
         
 }
 
