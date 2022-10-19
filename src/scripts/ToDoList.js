@@ -8,7 +8,6 @@ let activeProject;
 // function to delete Projects and all associated tasks
 // function to delete individual tasks
 // function to display all Projects
-// function to display all Tasks related to Project
 // function to update active project
 // function to get list of tasks from current project
 
@@ -68,8 +67,16 @@ function displayProjects() {
         projectContainer.appendChild(h4);
     }
 
+    // highlight active object
+    if(projects.length > 0) {
+        let children = document.querySelector('.project-container').children;
+        children[activeProject].style.color = 'var(--darkGrayishBlue)';
+        children[activeProject].style.borderBottom = '2px dashed var(--darkGrayishBlue';
+        children[activeProject].style.fontSize = '3rem';
+        console.log(children);
+    }
+
     // display tasks (if true)
-    console.log(projects[activeProject].tasks.length)
     if(projects[activeProject].tasks.length > 0) {
         for(let i = 0; i < projects[activeProject].tasks.length; i++) {
             const h5 = document.createElement('h5');
@@ -80,14 +87,7 @@ function displayProjects() {
     }
 }
 
-
-
-
-
-
-
-
-export { getActiveProject, addProject, addTask, displayProjects, init }
+export { getActiveProject, setActiveProject, addProject, addTask, displayProjects, init }
 
 
 
@@ -161,25 +161,3 @@ displayTasks(); */
     projectContainerChildren.item(activeProject).style.borderBottom = '3px solid var(--cool-grey)';
         
 } */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* export { displayProjects } */
-
-
-
-/* addProject('Second', ["Eat Something", "Eat Nothing"]); */
