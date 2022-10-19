@@ -13,7 +13,6 @@ let activeProject;
 // function to get list of tasks from current project
 
 
-
 /**************** Temporary population data - DELETE ***************/
 
 
@@ -56,9 +55,18 @@ function addTask(task) {
 
 function displayProjects() {
 
+    const projectContainer = document.querySelector('.project-container');
+
+    projectContainer.innerHTML = '';
+
+    for(let i = 0; i < projects.length; i++) {
+        const h4 = document.createElement('h4');
+        h4.className = 'p' + i;
+        h4.innerText = projects[i].title;
+        projectContainer.appendChild(h4);
+    }
+
     
-
-
 }
 
 
