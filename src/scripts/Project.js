@@ -5,7 +5,20 @@
 //      - function to delete task
 
 
+class Project {
+    constructor(title, tasks = []) {
+        this.title = title;
+        this.tasks = tasks;
+}
 
+class Task {
+    constructor(title, description, dueDate, priority) {
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+    }
+}
 
 
 
