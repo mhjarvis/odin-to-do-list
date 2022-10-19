@@ -1,16 +1,40 @@
+import { createNewProject } from './Project';
+import { createTask } from './Task';
 
 let projects = [];
 
 let activeProject;
 
-// function to add Tasks
 // function to delete Projects and all associated tasks
 // function to delete individual tasks
 // function to display all Projects
 // function to display all Tasks related to Project
-// Active Project variable
 // function to update active project
 // function to get list of tasks from current project
+
+
+
+/**************** Temporary population data - DELETE ***************/
+
+
+function init() {
+
+    setActiveProject(0);
+
+    // Create filler projects
+    for(let i = 0; i < 2; i++) {
+        let temp = createNewProject('Project-' + i);
+        addProject(temp);
+    }
+
+    // Create filler tasks
+    let t = createTask('Eat Breakfast', 'Various Foods', '10/10/22', 'high');
+    addTask(t);
+
+
+    displayProjects();
+}
+/*******************************************************************/
 
 
 
@@ -32,14 +56,9 @@ function addTask(task) {
 
 function displayProjects() {
 
-
-
-
-
-
-
-
     
+
+
 }
 
 
@@ -49,7 +68,7 @@ function displayProjects() {
 
 
 
-export { setActiveProject, getActiveProject, addProject, addTask, displayProjects, projects }
+export { getActiveProject, addProject, addTask, displayProjects, init }
 
 
 
