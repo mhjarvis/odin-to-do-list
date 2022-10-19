@@ -19,6 +19,9 @@ function setActiveProject(num) {
     activeProject = num;
 }
 
+function getActiveProject() {
+    return activeProject;
+}
 
 
 
@@ -33,7 +36,7 @@ function setActiveProject(num) {
 
 
 
-
+export { setActiveProject, getActiveProject }
 
 
 
