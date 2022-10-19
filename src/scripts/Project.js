@@ -10,13 +10,12 @@ class Project {
     }
 }
 
-let p = new Project('Today');
+function createNewProject(title) {
+    let p = new Project(title);
+    return p;
+}
 
-/* projects.push(p);
-
-
-
-
+export { createNewProject }
 
 
 

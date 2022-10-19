@@ -3,7 +3,6 @@ let projects = [];
 
 let activeProject;
 
-// function to add Projects
 // function to add Tasks
 // function to delete Projects and all associated tasks
 // function to delete individual tasks
@@ -23,6 +22,9 @@ function getActiveProject() {
     return activeProject;
 }
 
+function addProject(proj) {
+    projects.push(proj);
+}
 
 
 
@@ -33,10 +35,7 @@ function getActiveProject() {
 
 
 
-
-
-
-export { setActiveProject, getActiveProject }
+export { setActiveProject, getActiveProject, addProject }
 
 
 

@@ -1,1 +1,1 @@
-(()=>{"use strict";document.querySelector(".new-project-button").addEventListener("click",(()=>{console.log("test")}))})();
+(()=>{"use strict";let t,e=[];class s{constructor(t,e=[]){this.title=t,this.tasks=e}}var c;document.querySelector(".new-project-button").addEventListener("click",(()=>{console.log("test")})),t=0;for(let t=0;t<2;t++){c=new s("Project-"+t),e.push(c)}})();
