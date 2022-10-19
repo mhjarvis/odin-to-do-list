@@ -1,6 +1,8 @@
 
 let projects = [];
 
+let activeProject;
+
 // function to add Projects
 // function to add Tasks
 // function to delete Projects and all associated tasks
@@ -13,8 +15,9 @@ let projects = [];
 
 
 
-
-
+function setActiveProject(num) {
+    activeProject = num;
+}
 
 
 

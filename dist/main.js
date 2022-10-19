@@ -1,1 +1,1 @@
-(()=>{"use strict";document.querySelector(".new-project-button").addEventListener("click",(()=>{console.log("test")}));let t=[],s=new class{constructor(t,s=[]){this.title=t,this.tasks=s}}("Today"),e=new class{constructor(t,s,e,o){this.title=t,this.description=s,this.dueDate=e,this.priority=o}}("Eat Lunch","ffffffffffffffffff","10/10/22","high");t.push(s),t[0].tasks.push(e),console.log(t),console.log(s.title)})();
+(()=>{"use strict";document.querySelector(".new-project-button").addEventListener("click",(()=>{console.log("test")}))})();

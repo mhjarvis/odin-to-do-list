@@ -10,10 +10,12 @@ class Task {
     }
 }
 
+let t = new Task('Eat Lunch', 'ffffffffffffffffff', '10/10/22', 'high'); */
 
 
 
 
+projects[0].tasks.push(t); */
 
 
 
