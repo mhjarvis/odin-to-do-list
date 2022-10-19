@@ -10,47 +10,13 @@ class Task {
     }
 }
 
-let t = new Task('Eat Lunch', 'ffffffffffffffffff', '10/10/22', 'high'); */
 
 
-
-
-projects[0].tasks.push(t); */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// add notes
-// add checklist
-
-/*
 function createTask(title, description, dueDate, priority) {
-    let arr = [];
-    let task = new Task(title, description, dueDate, priority);
-//    arr.push(task);
-    return arr;
+    let newTask = new Task(title, description, dueDate, priority);
+    return newTask;
 }
 
-export { /* createTask */ //}
+
+
+export { createTask }
