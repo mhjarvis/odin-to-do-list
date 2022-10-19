@@ -1,7 +1,21 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // add notes
 // add checklist
 
-class Task {
+/* class Task {
     constructor(title, description, dueDate, priority) {
         this.title = title;
         this.description = description;
@@ -13,8 +27,8 @@ class Task {
 function createTask(title, description, dueDate, priority) {
     let arr = [];
     let task = new Task(title, description, dueDate, priority);
-    arr.push(task);
+//    arr.push(task);
     return arr;
 }
 
-export { createTask }
+export { /* createTask */ //}

@@ -1,36 +1,35 @@
-import { displayProjects } from './ToDoList'
+/* import { displayProjects } from './ToDoList'
 import { createTask } from './Task'
-
-class Project {
+ */
+/* class Project {
     constructor(title, tasks = []) {
         this.title = title;
         this.tasks = tasks;
     }
 
         // default const for tasks needs to be reworkedf
-}
+} */
 
-let allProjects = [];
-
-let currentProject = 0;    //temp solution
-
-
-
+/* let allProjects = [];
+ */
+/* let currentProject = 0;    //temp solution
+ */
 
 
 
 
-function createNewTask(title, description, dueDate, priority) {
+
+/* function createNewTask(title, description, dueDate, priority) {
     let newTask = createTask(title, description, dueDate, priority);
     allProjects[currentProject].tasks.push(newTask);
 }
-
-function addTaskToCurrentProject(task) {
+ */
+/* function addTaskToCurrentProject(task) {
     allProjects[currentProject].tasks.push(task);
     displayProjects();
-}
+} */
 
-function createNewProject(title, tasks) {
+/* function createNewProject(title, tasks) {
     let temp = new Project(title, tasks);
     allProjects.push(temp);
     displayProjects();
@@ -51,4 +50,4 @@ function getActiveProject() {
 
 
 
-export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject }
+export { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject } */

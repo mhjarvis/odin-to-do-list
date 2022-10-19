@@ -1,4 +1,51 @@
-import { createNewProject } from "./Project"; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import { createNewProject } from "./Project"; 
 
 // Control all buttons/events from here
 
@@ -43,7 +90,7 @@ function initializeListeners() {
 
 
 
-
+/* 
 function toggleForm() {
     const selectContainer = document.querySelector('.project-container');
     const selectButton = document.querySelector('.new-project-button');
@@ -59,4 +106,4 @@ function toggleForm() {
     selectForm.style.display = 'block';
 }
 
-export { initializeListeners }
+export { initializeListeners } */

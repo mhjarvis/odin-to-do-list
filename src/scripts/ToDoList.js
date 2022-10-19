@@ -1,4 +1,36 @@
-import { initializeListeners } from './EnventControl';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* import { initializeListeners } from './EnventControl';
 import { createNewTask, addTaskToCurrentProject, createNewProject, getProjectsArray, setActiveProject, getActiveProject } from './Project';
 
 const projectContainer = document.querySelector('.project-container');
@@ -8,7 +40,7 @@ initializeListeners();
 /************* Default filler - Delete Later ***********/
 
 // temporary actions - add initial default project and set active project to it
-createNewProject('Default');
+/* createNewProject('Default');
 createNewProject('Week 1');
 
 setActiveProject(0);
@@ -19,11 +51,11 @@ createNewTask('Go to Sleep', 'by 8:00', '10/22/22', 'low');
 
 /*******************************************************/
 
-displayProjects();
-displayTasks();
+/* displayProjects();
+displayTasks(); */
 
 
-function displayProjects() {
+/* function displayProjects() {
 
     projectContainer.innerHTML = '';                // reset container
     let projectsList = getProjectsArray();
@@ -35,9 +67,9 @@ function displayProjects() {
     }
 
     highlightCurrentProject();
-}
+} */
 
-function displayTasks() {
+/* function displayTasks() {
 
     taskContainer.innerHTML = '';                   // reset container
     let tasksLength = getProjectsArray()[getActiveProject()].tasks.length;
@@ -51,8 +83,8 @@ function displayTasks() {
         taskContainer.appendChild(div);
     }
 }
-
-function highlightCurrentProject() {
+ */
+/* function highlightCurrentProject() {
     
     let activeProject = getActiveProject();
 
@@ -61,7 +93,7 @@ function highlightCurrentProject() {
     projectContainerChildren.item(activeProject).style.color = 'var(--cool-grey)';
     projectContainerChildren.item(activeProject).style.borderBottom = '3px solid var(--cool-grey)';
         
-}
+} */
 
 
 
@@ -79,7 +111,7 @@ function highlightCurrentProject() {
 
 
 
-export { displayProjects }
+/* export { displayProjects } */
 
 
 
