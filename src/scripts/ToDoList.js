@@ -56,9 +56,11 @@ function addTask(task) {
 function displayProjects() {
 
     const projectContainer = document.querySelector('.project-container');
+    const taskContainer = document.querySelector('.task-container');
 
     projectContainer.innerHTML = '';
 
+    // display projects
     for(let i = 0; i < projects.length; i++) {
         const h4 = document.createElement('h4');
         h4.className = 'p' + i;
@@ -66,7 +68,16 @@ function displayProjects() {
         projectContainer.appendChild(h4);
     }
 
-    
+    // display tasks (if true)
+    console.log(projects[activeProject].tasks.length)
+    if(projects[activeProject].tasks.length > 0) {
+        for(let i = 0; i < projects[activeProject].tasks.length; i++) {
+            const h5 = document.createElement('h5');
+            h5.className = 't' + i;
+            h5.innerText = projects[activeProject].tasks[i].title;
+            taskContainer.appendChild(h5);
+        }
+    }
 }
 
 
