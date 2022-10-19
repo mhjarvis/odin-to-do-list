@@ -26,6 +26,11 @@ function addProject(proj) {
     projects.push(proj);
 }
 
+function addTask(task) {
+    projects[activeProject].tasks.push(task);
+}
+
+function displayProjects() {
 
 
 
@@ -34,8 +39,17 @@ function addProject(proj) {
 
 
 
+    
+}
 
-export { setActiveProject, getActiveProject, addProject }
+
+
+
+
+
+
+
+export { setActiveProject, getActiveProject, addProject, addTask, displayProjects, projects }
 
 
 
