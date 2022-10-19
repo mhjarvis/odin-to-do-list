@@ -1,7 +1,5 @@
 
 // Project Class - contains:
-//      - name
-//      - [] for tasks
 //      - function to delete task
 
 
@@ -11,9 +9,6 @@ class Project {
         this.tasks = tasks;
     }
 }
-
-
-
 
 let p = new Project('Today');
 
