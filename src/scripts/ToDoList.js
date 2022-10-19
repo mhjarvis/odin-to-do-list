@@ -1,5 +1,15 @@
 
+let projects = [];
 
+// function to add Projects
+// function to add Tasks
+// function to delete Projects and all associated tasks
+// function to delete individual tasks
+// function to display all Projects
+// function to display all Tasks related to Project
+// Active Project variable
+// function to update active project
+// function to get list of tasks from current project
 
 
 

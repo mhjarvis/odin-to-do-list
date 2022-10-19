@@ -1,3 +1,59 @@
+
+// Project Class - contains:
+//      - name
+//      - [] for tasks
+//      - function to delete task
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* import { displayProjects } from './ToDoList'
 import { createTask } from './Task'
  */

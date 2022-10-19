@@ -1,3 +1,29 @@
+// Task Class - contains:
+//      - title
+//      - description
+//      - dueDate
+//      - priority
+//      - checkbox
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

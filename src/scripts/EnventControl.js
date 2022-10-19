@@ -1,8 +1,28 @@
 
+function initializeListeners() {
+
+    const addProjectButton = document.querySelector('.new-project-button');
+
+    addProjectButton.addEventListener('click', () => {
+        console.log('test');
+    })
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+}
+
+export { initializeListeners }
 
 
 
