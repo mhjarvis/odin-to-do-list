@@ -94,12 +94,35 @@ function displayProjects() {
 ///////////////
 
 function buildTaskContainer() {
+
+    
     for(let i = 0; i < projects[activeProject].tasks.length; i++) {
+
+        // create container element
         const div = document.createElement('div');
         div.id = `p${getActiveProject}t${i}`;
         div.className = 'task';
-        div.innerText = projects[activeProject].tasks[i].title;
+        // div.innerText = projects[activeProject].tasks[i].title;
         taskContainer.appendChild(div);
+
+        // get new div element
+        const getDiv = document.getElementById(`p${getActiveProject}t${i}`);
+
+        // add checkbox element with event listener
+        const checkbox = document.createElement('INPUT');
+        checkbox.setAttribute('type', 'checkbox');
+
+        checkbox.addEventListener('change', function() {
+            if(this.checked) {
+                this.parentElement.style.backgroundColor = 'white';
+                console.log('checked');
+            } else {
+                console.log('unchecked');
+                this.parentElement.style.backgroundColor = 'var(--veryDarkBlueDesaturated)';
+            }
+        })
+
+        getDiv.appendChild(checkbox);
 
 
 /*      const h5 = document.createElement('h5');
