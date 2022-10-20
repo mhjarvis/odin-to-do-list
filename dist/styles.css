@@ -168,8 +168,9 @@ aside {
 /**************** SECTION ******************/
 
 section {
-    color: var(--white)
-
+    color: var(--white);
+    border: 1px solid white;
+    padding: 10rem;
 }
 
 section * {

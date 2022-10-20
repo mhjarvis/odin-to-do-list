@@ -1,9 +1,12 @@
 import { createNewProject } from './Project';
 import { createTask } from './Task';
+import { initializeListeners } from './EnventControl';
 
 let projects = [];
 
 let activeProject;
+
+const taskContainer = document.querySelector('.task-container');
 
 // function to delete Projects and all associated tasks
 // function to delete individual tasks
@@ -55,9 +58,9 @@ function addTask(task) {
 function displayProjects() {
 
     const projectContainer = document.querySelector('.project-container');
-    const taskContainer = document.querySelector('.task-container');
 
     projectContainer.innerHTML = '';
+    taskContainer.innerHTML = '';
 
     // display projects
     for(let i = 0; i < projects.length; i++) {
@@ -72,19 +75,39 @@ function displayProjects() {
         let children = document.querySelector('.project-container').children;
         children[activeProject].style.color = 'var(--darkGrayishBlue)';
         children[activeProject].style.borderBottom = '2px dashed var(--darkGrayishBlue';
-        children[activeProject].style.fontSize = '3rem';
+        children[activeProject].style.fontSize = '2.7rem';
         console.log(children);
     }
 
     // display tasks (if true)
     if(projects[activeProject].tasks.length > 0) {
-        for(let i = 0; i < projects[activeProject].tasks.length; i++) {
-            const h5 = document.createElement('h5');
-            h5.className = 't' + i;
-            h5.innerText = projects[activeProject].tasks[i].title;
-            taskContainer.appendChild(h5);
-        }
+        buildTaskContainer();
+
     }
+
+    initializeListeners();
+}
+
+
+///////////////div needs to be re-worked; create additional html elements to show description, dates, priority, checkbox?, etc.
+///////////////
+
+function buildTaskContainer() {
+    for(let i = 0; i < projects[activeProject].tasks.length; i++) {
+        const div = document.createElement('div');
+        div.id = `p${getActiveProject}t${i}`;
+        div.innerText = projects[activeProject].tasks[i].title;
+        taskContainer.appendChild(div);
+
+
+/*      const h5 = document.createElement('h5');
+        h5.className = 't' + i;
+        h5.innerText = projects[activeProject].tasks[i].title;
+        taskContainer.appendChild(h5); */
+    }
+
+    const div = document.createElement('div');
+
 }
 
 export { getActiveProject, setActiveProject, addProject, addTask, displayProjects, init }

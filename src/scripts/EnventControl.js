@@ -1,13 +1,25 @@
+import { setActiveProject, displayProjects } from './ToDoList';
+
 
 function initializeListeners() {
 
     const addProjectButton = document.querySelector('.new-project-button');
-
+    const individualProjects = document.querySelectorAll('.project-container h4');
+    
+    // event listener added to 'Add Project' button
     addProjectButton.addEventListener('click', () => {
         console.log('test');
     })
 
-
+    // event listeners for each 'Project' object
+    individualProjects.forEach(proj => {
+        proj.addEventListener('click', function handleClick(event) {
+            let index = this.className.substring(1);
+            setActiveProject(index);    
+            displayProjects(); 
+            console.log(index);
+        });
+    })
 
 
 
