@@ -168,7 +168,7 @@ aside {
 /**************** SECTION ******************/
 
 section {
-    color: var(--white);
+    color: var(--lightishGrayBlueHover);
     border: 1px solid white;
     padding: 7rem;
 }
@@ -188,6 +188,10 @@ section * {
     height: 4rem;
     width: 100%;
     border-radius: 12px;
+}
+
+.task-title {
+    margin-left: 1rem;
 }
 
 /********************************************

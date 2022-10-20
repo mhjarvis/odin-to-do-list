@@ -114,15 +114,22 @@ function buildTaskContainer() {
 
         checkbox.addEventListener('change', function() {
             if(this.checked) {
-                this.parentElement.style.backgroundColor = 'white';
+                this.parentElement.style.color = 'var(--veryDarkGrayishBlue)';
+                this.parentElement.style.textDecoration = 'line-through';
                 console.log('checked');
             } else {
                 console.log('unchecked');
-                this.parentElement.style.backgroundColor = 'var(--veryDarkBlueDesaturated)';
+                this.parentElement.style.color = 'var(--lightishGrayBlueHover)';
+                this.parentElement.style.textDecoration = 'none';
             }
         })
 
         getDiv.appendChild(checkbox);
+
+        const taskTitle = document.createElement('h6');
+        taskTitle.className = 'task-title';
+        taskTitle.innerText = projects[activeProject].tasks[i].title;
+        getDiv.appendChild(taskTitle);
 
 
 /*      const h5 = document.createElement('h5');
