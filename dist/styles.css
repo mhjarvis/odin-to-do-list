@@ -170,11 +170,24 @@ aside {
 section {
     color: var(--white);
     border: 1px solid white;
-    padding: 10rem;
+    padding: 7rem;
 }
 
 section * {
     font-size: 2rem;
+}
+
+/**************** TASK OBJS ******************/
+
+.task {
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+    margin: 2rem 0;
+    background-color: var(--veryDarkBlueDesaturated);
+    height: 4rem;
+    width: 100%;
+    border-radius: 12px;
 }
 
 /********************************************

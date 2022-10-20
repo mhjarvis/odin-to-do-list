@@ -30,8 +30,9 @@ function init() {
 
     // Create filler tasks
     let t = createTask('Eat Breakfast', 'Various Foods', '10/10/22', 'high');
+    let u = createTask('Buy Christmas Presents', 'none', '10/23/22', 'low');
     addTask(t);
-
+    addTask(u);
 
     displayProjects();
 }
@@ -96,6 +97,7 @@ function buildTaskContainer() {
     for(let i = 0; i < projects[activeProject].tasks.length; i++) {
         const div = document.createElement('div');
         div.id = `p${getActiveProject}t${i}`;
+        div.className = 'task';
         div.innerText = projects[activeProject].tasks[i].title;
         taskContainer.appendChild(div);
 
