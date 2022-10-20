@@ -1,4 +1,5 @@
-import { setActiveProject, displayProjects } from './ToDoList';
+import { setActiveProject, addProject, displayProjects } from './ToDoList';
+import { createNewProject } from './Project'
 
 
 function initializeListeners() {
@@ -12,14 +13,17 @@ function initializeListeners() {
     // event listener for 'Add Project' button
     projectButton.addEventListener('click', () => {
         toggleForm();
-        console.log('test');
+        console.log('testbutton');
     })
 
     // Add Project Button
     addButton.addEventListener('click', () => {
-        let value = document.querySelector('#project-name').value;
+        let projectInputValue = document.querySelector('#project-name').value;
+        let x = createNewProject(projectInputValue);
+        projectInputValue = '';
+        addProject(x);
         toggleForm();
-        createNewProject(value);
+        displayProjects();it a
     })
 
     // Cancel Project Button
@@ -52,6 +56,7 @@ function initializeListeners() {
         if(selectButton.style.display == 'none') {
             selectForm.style.display = 'none';
             selectButton.style.display = 'block';
+            console.log('shit')
             return;
         }
         selectButton.style.display = 'none';
