@@ -9,11 +9,16 @@ let activeProject;
 const taskContainer = document.querySelector('.task-container');
 
 // function to delete Projects and all associated tasks
-// function to delete individual tasks
-// function to display all Projects
-// function to update active project
-// function to get list of tasks from current project
 
+// function to delete individual tasks
+
+// function to add new task to current project
+
+// Default (when loading) should siplay all tasks
+
+// Add due date / priority parts to task element
+
+// Create form for new task button
 
 /**************** Temporary population data - DELETE ***************/
 
