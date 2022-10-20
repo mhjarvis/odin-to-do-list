@@ -3,12 +3,20 @@ import { setActiveProject, displayProjects } from './ToDoList';
 
 function initializeListeners() {
 
-    const addProjectButton = document.querySelector('.new-project-button');
+    const projectButton = document.querySelector('.new-project-button');
+    const taskButton = document.querySelector('.new-task-button');
     const individualProjects = document.querySelectorAll('.project-container h4');
     
-    // event listener added to 'Add Project' button
-    addProjectButton.addEventListener('click', () => {
+    // event listener for 'Add Project' button
+    projectButton.addEventListener('click', () => {
+        toggleForm();
         console.log('test');
+    })
+
+    // event listener for 'Add Task' button
+    taskButton.addEventListener('click', () => {
+        console.log('test');
+
     })
 
     // event listeners for each 'Project' object
@@ -22,7 +30,20 @@ function initializeListeners() {
     })
 
 
-
+    function toggleForm() {
+        const selectContainer = document.querySelector('.project-container');
+        const selectButton = document.querySelector('.new-project-button');
+        const selectForm = document.querySelector('.project-form-container');
+        
+        if(selectButton.style.display == 'none') {
+            selectForm.style.display = 'none';
+            selectButton.style.display = 'block';
+            return;
+        }
+    
+        selectButton.style.display = 'none';
+        selectForm.style.display = 'block';
+    }
 
 
 
@@ -79,14 +100,8 @@ export { initializeListeners }
 
 /* import { createNewProject } from "./Project"; 
 
-// Control all buttons/events from here
 
-function initializeListeners() {
 
-    const newProjectButton = document.querySelector('.new-project-button');
-    const addButton = document.querySelector('.add-button');
-    const cancelButton = document.querySelector('.cancel-button');
-    const individualProjects = document.querySelectorAll('project-container a');
     
     // New Project Button
     newProjectButton.addEventListener('click', () => {
@@ -123,19 +138,6 @@ function initializeListeners() {
 
 
 /* 
-function toggleForm() {
-    const selectContainer = document.querySelector('.project-container');
-    const selectButton = document.querySelector('.new-project-button');
-    const selectForm = document.querySelector('.project-form-container');
-    
-    if(selectButton.style.display == 'none') {
-        selectForm.style.display = 'none';
-        selectButton.style.display = 'block';
-        return;
-    }
 
-    selectButton.style.display = 'none';
-    selectForm.style.display = 'block';
-}
 
 export { initializeListeners } */

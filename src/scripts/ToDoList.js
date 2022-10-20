@@ -121,29 +121,21 @@ function buildTaskContainer() {
             if(this.checked) {
                 this.parentElement.style.color = 'var(--veryDarkGrayishBlue)';
                 this.parentElement.style.textDecoration = 'line-through';
-                console.log('checked');
             } else {
-                console.log('unchecked');
                 this.parentElement.style.color = 'var(--lightishGrayBlueHover)';
                 this.parentElement.style.textDecoration = 'none';
             }
         })
-
         getDiv.appendChild(checkbox);
 
+        // add task title to div
         const taskTitle = document.createElement('h6');
         taskTitle.className = 'task-title';
         taskTitle.innerText = projects[activeProject].tasks[i].title;
         getDiv.appendChild(taskTitle);
 
-
-/*      const h5 = document.createElement('h5');
-        h5.className = 't' + i;
-        h5.innerText = projects[activeProject].tasks[i].title;
-        taskContainer.appendChild(h5); */
+        // add due date to field
     }
-
-    const div = document.createElement('div');
 
 }
 
