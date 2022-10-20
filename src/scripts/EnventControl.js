@@ -23,7 +23,8 @@ function initializeListeners() {
         projectInputValue = '';
         addProject(x);
         toggleForm();
-        displayProjects();it a
+        displayProjects();
+        
     })
 
     // Cancel Project Button
