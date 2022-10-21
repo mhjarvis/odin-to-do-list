@@ -12,7 +12,7 @@ function initializeListeners() {
     
     // event listener for 'Add Project' button
     projectButton.addEventListener('click', () => {
-        toggleForm();
+        toggleProjectForm();
         console.log('testbutton');
     })
 
@@ -22,19 +22,44 @@ function initializeListeners() {
         let x = createNewProject(projectInputValue);
         projectInputValue = '';
         addProject(x);
-        toggleForm();
+        toggleProjectForm();
         displayProjects();
-    
     })
 
     // Cancel Project Button
     cancelButton.addEventListener('click', () => {
-        toggleForm();
+        toggleProjectForm();
     })
 
     // event listener for 'Add Task' button
     taskButton.addEventListener('click', () => {
-        console.log('test');
+
+        // get task container element for appending
+        const taskContainer = document.querySelector('.task-container');
+
+        // create form element and append
+        const form = document.createElement('form');
+        form.className = 'new-task-form';
+        taskContainer.appendChild(form);
+
+        // get form container
+        const formContainer = document.querySelector('.new-task-form');
+
+        // create label and append
+        const label = document.createElement('label');
+        label.className = 'new-task-label';
+        label.innerText = 'New Task Name:'
+        label.for = 'task-title';
+        formContainer.appendChild(label);
+    
+
+        // create input and append
+        const input = document.createElement('input');
+        input.className = 'new-task-form';
+        formContainer.appendChild(input);
+
+        
+        console.log(formContainer);
 
     })
 
@@ -48,105 +73,29 @@ function initializeListeners() {
         });
     })
 
-
-    function toggleForm() {
-        const selectContainer = document.querySelector('.project-container');
-        const selectButton = document.querySelector('.new-project-button');
-        const selectForm = document.querySelector('.project-form-container');
-        
-        if(selectButton.style.display == 'none') {
-            selectForm.style.display = 'none';
-            selectButton.style.display = 'block';
-            console.log('shit')
-            return;
-        }
-        selectButton.style.display = 'none';
-        selectForm.style.display = 'block';
-    }
-
-
-
-
-
-
-
+    
 
 
 }
+
+function toggleProjectForm() {
+    const selectContainer = document.querySelector('.project-container');
+    const selectButton = document.querySelector('.new-project-button');
+    const selectForm = document.querySelector('.project-form-container');
+        
+    if(selectButton.style.display == 'none') {
+        selectForm.style.display = 'none';
+        selectButton.style.display = 'block';
+        console.log('shit')
+        return;
+    }
+    selectButton.style.display = 'none';
+    selectForm.style.display = 'block';
+}
+
+function toggleTaskForm() {
+    const selectContainer = document.querySelector('.')
+}
+
 
 export { initializeListeners }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* import { createNewProject } from "./Project"; 
-
-
-
-    
-    // New Project Button
-    newProjectButton.addEventListener('click', () => {
-        toggleForm();
-    });
-
-
-}
-
-/*     // Individual Projects
-    individualProjects.forEach(proj => {
-        proj.addEventListener('click', function handleClick(event) {
-            console.log("tst", event);
-        });
-    }) */
-
-
-/*     individualProjects.addEventListener('click', () => {
-        console.log("working");
-    })
-
-} */
-
-
-
-/* 
-
-
-export { initializeListeners } */
