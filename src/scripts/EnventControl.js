@@ -24,7 +24,7 @@ function initializeListeners() {
         addProject(x);
         toggleForm();
         displayProjects();
-        
+    
     })
 
     // Cancel Project Button
