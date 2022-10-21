@@ -5,33 +5,8 @@ import { createNewProject } from './Project'
 
 function initializeListeners() {
 
-    const projectButton = document.querySelector('.new-project-button');
     const taskButton = document.querySelector('.new-task-button');
     const individualProjects = document.querySelectorAll('.project-container h4');
-    const addButton = document.querySelector('.add-button');
-    const cancelButton = document.querySelector('.cancel-button');
-    
-    // event listener for 'Add Project' button
-    projectButton.addEventListener('click', () => {
-        toggleProjectForm();
-        console.log('testbutton');
-    })
-
-    // Add Project Button
-    addButton.addEventListener('click', () => {
-        let projectInputValue = document.querySelector('#project-name').value;
-        let x = createNewProject(projectInputValue);
-        projectInputValue = '';
-        addProject(x);
-        toggleProjectForm();
-        displayProjects();
-    })
-    
-    // Cancel Project Button
-    cancelButton.addEventListener('click', () => {
-        toggleProjectForm();
-    })
-
 
     // event listener for 'Add Task' button
     taskButton.addEventListener('click', () => {
@@ -39,10 +14,7 @@ function initializeListeners() {
         // get task / form containers
         const taskContainer = document.querySelector('.task-container');
         const formContainer = document.querySelector('.new-task-form');
-        const sec = document.querySelector('.section');
-        console.log(sec)
         toggleTaskForm();
-
     })
 
     const getAddAddTaskButton = document.querySelector('.task-add-button');
@@ -53,9 +25,6 @@ function initializeListeners() {
         addTask(x);
         toggleTaskForm();
         displayProjects();
-
-        const sec = document.querySelector('.section');
-        console.log(sec);
     })
 
     const getCancelAddTaskButton = document.querySelector('.task-cancel-button');
@@ -63,29 +32,14 @@ function initializeListeners() {
         toggleTaskForm();
     })
 
-/*     addButton.addEventListener('click', () => {
-        let projectInputValue = document.querySelector('#project-name').value;
-        let x = createNewProject(projectInputValue);
-        projectInputValue = '';
-        addProject(x);
-        toggleProjectForm();
-        displayProjects();
-    }) */
-
     // event listeners for each 'Project' object
-
     individualProjects.forEach(proj => {
         proj.addEventListener('click', function handleClick(event) {
             let index = this.className.substring(1);
             setActiveProject(index);    
             displayProjects(); 
-            console.log(index);
         });
     })
-
-    
-
-
 }
 
 function toggleProjectForm() {
@@ -116,5 +70,38 @@ function toggleTaskForm() {
     selectFormContainer.style.display = 'block';
 }
 
+// These are to be initialized once, not each time the Container holding all projects is rebuild
 
-export { initializeListeners }
+function initMainButtons() {
+
+    const projectButton = document.querySelector('.new-project-button');
+    const addButton = document.querySelector('.add-button');
+    const cancelButton = document.querySelector('.cancel-button');
+
+    // event listener for 'Add Project' button
+    projectButton.addEventListener('click', () => {
+        toggleProjectForm();
+        console.log("main buttons init")
+    })
+
+    // Add Project Button
+    addButton.addEventListener('click', function handleClick(event) {
+        event.preventDefault();
+        let projectInputValue = document.querySelector('#project-name');
+        let x = createNewProject(projectInputValue.value);
+        projectInputValue.value = '';
+        addProject(x);
+        toggleProjectForm();
+        displayProjects();
+    })
+    
+    // Cancel Project Button
+    cancelButton.addEventListener('click', function handleClick(event) {
+        event.preventDefault();
+        let projectInputValue = document.querySelector('#project-name');
+        projectInputValue.value = '';
+        toggleProjectForm();
+    })
+}
+
+export { initializeListeners, initMainButtons }
