@@ -3,34 +3,13 @@ import { createTask } from './Task';
 import { createNewProject } from './Project'
 
 
+// fix issue with adding tasks
+// fix issue with projects once tasks are finished
+
 function initializeListeners() {
 
-    const taskButton = document.querySelector('.new-task-button');
     const individualProjects = document.querySelectorAll('.project-container h4');
 
-    // event listener for 'Add Task' button
-    taskButton.addEventListener('click', () => {
-
-        // get task / form containers
-        const taskContainer = document.querySelector('.task-container');
-        const formContainer = document.querySelector('.new-task-form');
-        toggleTaskForm();
-    })
-
-    const getAddAddTaskButton = document.querySelector('.task-add-button');
-    getAddAddTaskButton.addEventListener('click', () => {
-        let taskInputValue = document.querySelector('#task-title').value;
-        let x = createTask(taskInputValue, '', '', '');
-        taskInputValue = '';
-        addTask(x);
-        toggleTaskForm();
-        displayProjects();
-    })
-
-    const getCancelAddTaskButton = document.querySelector('.task-cancel-button');
-    getCancelAddTaskButton.addEventListener('click', () => {
-        toggleTaskForm();
-    })
 
     // event listeners for each 'Project' object
     individualProjects.forEach(proj => {
@@ -102,6 +81,67 @@ function initMainButtons() {
         projectInputValue.value = '';
         toggleProjectForm();
     })
+
+
+
+
+
+
+
+
+
+
+    const taskButton = document.querySelector('.new-task-button');
+    const individualProjects = document.querySelectorAll('.project-container h4');
+
+    // event listener for 'Add Task' button
+    taskButton.addEventListener('click', () => {
+
+        // get task / form containers
+        const taskContainer = document.querySelector('.task-container');
+        const formContainer = document.querySelector('.new-task-form');
+        toggleTaskForm();
+    })
+
+    const getAddAddTaskButton = document.querySelector('.task-add-button');
+    getAddAddTaskButton.addEventListener('click', () => {
+        let taskInputValue = document.querySelector('#task-title').value;
+        let x = createTask(taskInputValue, '', '', '');
+        taskInputValue = '';
+        addTask(x);
+        toggleTaskForm();
+        displayProjects();
+    })
+
+    const getCancelAddTaskButton = document.querySelector('.task-cancel-button');
+    getCancelAddTaskButton.addEventListener('click', () => {
+        toggleTaskForm();
+    })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 export { initializeListeners, initMainButtons }
