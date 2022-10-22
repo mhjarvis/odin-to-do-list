@@ -120,13 +120,20 @@ function buildTaskContainer() {
         console.log(projects[activeProject].tasks[i].checked);
         checkbox.checked = projects[activeProject].tasks[i].checked;
 
+        if(projects[activeProject].tasks[i].checked == true) {
+            document.getElementById(`p${getActiveProject}t${i}`).style.color = 'var(--veryDarkGrayishBlue)';
+            document.getElementById(`p${getActiveProject}t${i}`).style.textDecoration = 'line-through';
+        }
+
         checkbox.addEventListener('change', function() {
             if(this.checked) {
                 this.parentElement.style.color = 'var(--veryDarkGrayishBlue)';
                 this.parentElement.style.textDecoration = 'line-through';
+                projects[activeProject].tasks[i].checked = true;
             } else {
                 this.parentElement.style.color = 'var(--lightishGrayBlueHover)';
                 this.parentElement.style.textDecoration = 'none';
+                projects[activeProject].tasks[i].checked = false;
             }
         })
         getDiv.appendChild(checkbox);
