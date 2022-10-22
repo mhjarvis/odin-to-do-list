@@ -61,7 +61,7 @@ button:hover {
     background-color: var(--bittersweet-shimmer);
 }
 
-::-webkit-calendar-picker-indicator {
+input::-webkit-calendar-picker-indicator {
     filter: invert(1);
 }
 
