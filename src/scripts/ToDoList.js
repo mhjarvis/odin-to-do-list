@@ -35,7 +35,7 @@ function init() {
 
     // Create filler tasks
     let t = createTask('Eat Breakfast', 'Various Foods', '10/10/22', 'high');
-    let u = createTask('Buy Christmas Presents', 'none', '10/23/22', 'low');
+    let u = createTask('Buy Christmas Presents', 'none', '10/23/22', 'low', true);
     addTask(t);
     addTask(u);
 
@@ -82,7 +82,6 @@ function displayProjects() {
         children[activeProject].style.color = 'var(--darkGrayishBlue)';
         children[activeProject].style.borderBottom = '2px dashed var(--darkGrayishBlue';
         children[activeProject].style.fontSize = '2.7rem';
-        console.log(children);
     }
 
     // display tasks (if true)
@@ -116,6 +115,10 @@ function buildTaskContainer() {
         // add checkbox element with event listener
         const checkbox = document.createElement('INPUT');
         checkbox.setAttribute('type', 'checkbox');
+        
+        // set checkbox status
+        console.log(projects[activeProject].tasks[i].checked);
+        checkbox.checked = projects[activeProject].tasks[i].checked;
 
         checkbox.addEventListener('change', function() {
             if(this.checked) {

@@ -10,7 +10,6 @@ function initializeListeners() {
 
     const individualProjects = document.querySelectorAll('.project-container h4');
 
-
     // event listeners for each 'Project' object
     individualProjects.forEach(proj => {
         proj.addEventListener('click', function handleClick(event) {
@@ -60,7 +59,6 @@ function initMainButtons() {
     // event listener for 'Add Project' button
     projectButton.addEventListener('click', () => {
         toggleProjectForm();
-        console.log("main buttons init")
     })
 
     // Add Project Button
@@ -81,15 +79,6 @@ function initMainButtons() {
         projectInputValue.value = '';
         toggleProjectForm();
     })
-
-
-
-
-
-
-
-
-
 
     const taskButton = document.querySelector('.new-task-button');
     const individualProjects = document.querySelectorAll('.project-container h4');
