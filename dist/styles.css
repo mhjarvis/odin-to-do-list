@@ -62,8 +62,10 @@ button:hover {
 }
 
 input::-webkit-calendar-picker-indicator {
-    filter: invert(1);
+    filter: invert();
 }
+
+
 
 /********************************************
                     HEADER

@@ -131,6 +131,7 @@ function buildTaskContainer() {
                 this.parentElement.style.color = 'var(--veryDarkGrayishBlue)';
                 this.parentElement.style.textDecoration = 'line-through';
                 projects[activeProject].tasks[i].checked = true;
+                document.getElementById(`p${getActiveProject}t${i}-date`).style['input::-webkit-calendar-picker-indicator'].filter = 'inverted(0)';
             } else {
                 this.parentElement.style.color = 'var(--lightishGrayBlueHover)';
                 this.parentElement.style.textDecoration = 'none';
@@ -149,6 +150,7 @@ function buildTaskContainer() {
         const dateInput = document.createElement('input');
         dateInput.type = 'date';
         dateInput.className = 'date-input';
+        dateInput.id = `p${getActiveProject}t${i}-date`;
         dateInput.min = '2022-10-01';
         dateInput.max = '2099-12-31';
 
