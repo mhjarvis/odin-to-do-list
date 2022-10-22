@@ -248,6 +248,14 @@ section * {
 
 .task-title {
     margin-left: 1rem;
+    flex-grow: 4;
+    text-align: left;
+}
+
+.date-input {
+    background-color: inherit;
+    color: inherit;
+    
 }
 
 /********************************************

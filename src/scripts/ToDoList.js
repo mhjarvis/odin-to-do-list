@@ -145,6 +145,11 @@ function buildTaskContainer() {
         getDiv.appendChild(taskTitle);
 
         // add due date to field
+        const dateInput = document.createElement('input');
+        dateInput.type = 'date';
+        dateInput.className = 'date-input';
+
+        getDiv.appendChild(dateInput);
     }
 }
 
