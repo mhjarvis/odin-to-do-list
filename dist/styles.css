@@ -61,6 +61,10 @@ button:hover {
     background-color: var(--bittersweet-shimmer);
 }
 
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
 /********************************************
                     HEADER
 ********************************************/
@@ -255,7 +259,7 @@ section * {
 .date-input {
     background-color: inherit;
     color: inherit;
-    
+    font-family: 'Special Elite', cursive;
 }
 
 /********************************************

@@ -119,6 +119,7 @@ function buildTaskContainer() {
         // set checkbox status
         console.log(projects[activeProject].tasks[i].checked);
         checkbox.checked = projects[activeProject].tasks[i].checked;
+        checkbox.className = 'checkbox';
 
         if(projects[activeProject].tasks[i].checked == true) {
             document.getElementById(`p${getActiveProject}t${i}`).style.color = 'var(--veryDarkGrayishBlue)';
@@ -148,6 +149,8 @@ function buildTaskContainer() {
         const dateInput = document.createElement('input');
         dateInput.type = 'date';
         dateInput.className = 'date-input';
+        dateInput.min = '2022-10-01';
+        dateInput.max = '2099-12-31';
 
         getDiv.appendChild(dateInput);
     }
