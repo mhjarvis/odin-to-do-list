@@ -125,8 +125,12 @@ aside {
     margin: 10px 0;;
 }
 
-.project-container>*:hover {
+.project-container>div>h4:hover {
     color: var(--bittersweet-shimmer);
+}
+
+.project-container>div>h5:hover {
+    color: #c14953;
 }
 
 .new-project-button {
@@ -136,6 +140,20 @@ aside {
     border: none;
     border-radius: 1rem;
     
+}
+
+.indProjDivs {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.indProjDivs>h5 {
+    position: absolute;
+    left: -3rem;
+    justify-self: flex-end;
+    font-size: 2rem;
 }
 
 /************** PROJECT FORM ***************/

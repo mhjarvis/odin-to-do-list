@@ -72,12 +72,37 @@ function displayProjects() {
     projectContainer.innerHTML = '';
     taskContainer.innerHTML = '';
 
+    if(projects.length == 0) {
+        return;
+    }
+
     // display projects
     for(let i = 0; i < projects.length; i++) {
+
+        const div = document.createElement('div');
+        div.id = 'p' + i;
+        div.className = 'indProjDivs';
+        projectContainer.appendChild(div);
+
+        const indProjDivs = document.getElementById('p' + i);
+        
         const h4 = document.createElement('h4');
         h4.className = 'p' + i;
         h4.innerText = projects[i].title;
-        projectContainer.appendChild(h4);
+        indProjDivs.appendChild(h4);
+
+        const h5 = document.createElement('h5');
+        h5.className = 'p' + i;
+        h5.innerText = 'x';
+
+        h5.addEventListener('click', function handleClick(event) {
+            projects.splice(projects.indexOf(this), 1);
+            console.log(projects.length);
+            displayProjects();
+            console.log(projects.length);
+        })
+
+        indProjDivs.appendChild(h5);
     }
 
     // highlight active object
@@ -93,7 +118,6 @@ function displayProjects() {
         buildTaskContainer();
 
     }
-
     initializeListeners();
 }
 
