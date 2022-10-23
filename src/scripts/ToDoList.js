@@ -8,19 +8,7 @@ let activeProject;
 
 const taskContainer = document.querySelector('.task-container');
 
-// function to delete Projects and all associated tasks
-
-// function to add new task to current project
-
-// Default (when loading) should siplay all tasks
-
-// Add due date / priority parts to task element
-
-// Create form for new task button
-
 /**************** Temporary population data - DELETE ***************/
-
-
 function init() {
 
     setActiveProject(0);
@@ -32,8 +20,8 @@ function init() {
     }
 
     // Create filler tasks
-    let t = createTask('Eat Breakfast', 'Various Foods', '10/10/22', 'high');
-    let u = createTask('Buy Christmas Presents', 'none', '10/23/22', 'low', true);
+    let t = createTask('Eat Breakfast', 'Various Foods', '2022-10-10', 'high');
+    let u = createTask('Buy Christmas Presents', 'none', '2022-10-10', 'low', true);
     let w = createTask('Buy Presents', 'none', '10/23/22', 'low', true);
     addTask(t);
     addTask(u);
@@ -97,9 +85,7 @@ function displayProjects() {
 
         h5.addEventListener('click', function handleClick(event) {
             projects.splice(projects.indexOf(this), 1);
-            console.log(projects.length);
             displayProjects();
-            console.log(projects.length);
         })
 
         indProjDivs.appendChild(h5);
@@ -158,13 +144,10 @@ function buildTaskContainer() {
                 this.parentElement.style.color = 'var(--veryDarkGrayishBlue)';
                 this.parentElement.style.textDecoration = 'line-through';
                 projects[activeProject].tasks[i].checked = true;
-                console.log(projects[activeProject].tasks[i].checked);
             } else {
                 this.parentElement.style.color = 'var(--lightishGrayBlueHover)';
                 this.parentElement.style.textDecoration = 'none';
                 projects[activeProject].tasks[i].checked = false;
-                console.log(projects[activeProject].tasks[i].checked);
-
             }
         })
         getDiv.appendChild(checkbox);
@@ -180,10 +163,13 @@ function buildTaskContainer() {
         dateInput.type = 'date';
         dateInput.className = 'date-input';
         dateInput.id = `p${getActiveProject}t${i}-date`;
+        dateInput.value = projects[activeProject].tasks[i].dueDate;
         dateInput.min = '2022-10-01';
         dateInput.max = '2099-12-31';
+        console.log(dateInput);
 
-        getDiv.appendChild(dateInput);
+
+        getDiv.appendChild(dateInput)
     }
 }
 
