@@ -1,4 +1,4 @@
-import { setActiveProject, addProject, displayProjects, addTask } from './ToDoList';
+import { setActiveProject, getActiveProject, addProject, displayProjects, addTask, projects, deleteObject } from './ToDoList';
 import { createTask } from './Task';
 import { createNewProject } from './Project'
 
@@ -107,7 +107,20 @@ function initMainButtons() {
         toggleTaskForm();
     })
 
+    // delete checked tasks button
+    const deleteTasksButton = document.querySelector('.delete-tasks');
 
+    deleteTasksButton.addEventListener('click', function handleClick(event) {
+        let temp = projects[getActiveProject()].tasks;
+        console.log(temp);
+
+        for(let i = temp.length - 1; i >= 0; i--) {
+            if(temp[i].checked == true) {
+                deleteObject(i);
+            }
+        }
+
+    })
 
 
 

@@ -36,13 +36,19 @@ function init() {
     // Create filler tasks
     let t = createTask('Eat Breakfast', 'Various Foods', '10/10/22', 'high');
     let u = createTask('Buy Christmas Presents', 'none', '10/23/22', 'low', true);
+    let w = createTask('Buy Presents', 'none', '10/23/22', 'low', true);
     addTask(t);
     addTask(u);
+    addTask(w);
 
     displayProjects();
 }
 /*******************************************************************/
 
+function deleteObject(index) {
+    projects[activeProject].tasks.splice(index, 1);
+    displayProjects();
+}
 
 
 function setActiveProject(num) {
@@ -117,7 +123,6 @@ function buildTaskContainer() {
         checkbox.setAttribute('type', 'checkbox');
         
         // set checkbox status
-        console.log(projects[activeProject].tasks[i].checked);
         checkbox.checked = projects[activeProject].tasks[i].checked;
         checkbox.className = 'checkbox';
 
@@ -131,11 +136,13 @@ function buildTaskContainer() {
                 this.parentElement.style.color = 'var(--veryDarkGrayishBlue)';
                 this.parentElement.style.textDecoration = 'line-through';
                 projects[activeProject].tasks[i].checked = true;
-                document.getElementById(`p${getActiveProject}t${i}-date`).style['input::-webkit-calendar-picker-indicator'].filter = 'inverted(0)';
+                console.log(projects[activeProject].tasks[i].checked);
             } else {
                 this.parentElement.style.color = 'var(--lightishGrayBlueHover)';
                 this.parentElement.style.textDecoration = 'none';
                 projects[activeProject].tasks[i].checked = false;
+                console.log(projects[activeProject].tasks[i].checked);
+
             }
         })
         getDiv.appendChild(checkbox);
@@ -158,4 +165,4 @@ function buildTaskContainer() {
     }
 }
 
-export { getActiveProject, setActiveProject, addProject, addTask, displayProjects, init }
+export { getActiveProject, setActiveProject, addProject, addTask, displayProjects, init, deleteObject, projects }
