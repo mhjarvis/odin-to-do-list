@@ -229,27 +229,22 @@ section * {
 }
 
 .task-add-button {
-
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1.3rem 3rem 1rem 3rem;
+    border: none;
+    border-radius: 1rem;
+    align-self: center;
 }
 
 .task-cancel-button {
-
+    font-size: 2rem;
+    margin-top: 2rem;
+    padding: 1.3rem 3rem 1rem 3rem;
+    border: none;
+    border-radius: 1rem;
+    align-self: center;
 }
-
-/* .project-action * {
-    font-size: 1.5rem;
-    height: 4rem;
-    width: 6rem;
-    margin-top: 1rem;
-    color: var(--veryDarkBlue);
-    border-style: none;
-    border-radius: 6px;
-} */
-
-
-/* .add-button {
-    margin-right: 1rem;
-} */
 
 /**************** TASK OBJS ******************/
 

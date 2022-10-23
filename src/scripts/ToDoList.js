@@ -10,8 +10,6 @@ const taskContainer = document.querySelector('.task-container');
 
 // function to delete Projects and all associated tasks
 
-// function to delete individual tasks
-
 // function to add new task to current project
 
 // Default (when loading) should siplay all tasks
