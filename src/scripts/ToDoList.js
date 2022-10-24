@@ -13,6 +13,14 @@ function init() {
 
     setActiveProject(0);
 
+    let today = createNewProject('Today');
+    let tomorrow = createNewProject('Tomorrow');
+    let comingSoon = createNewProject('Coming Soon');
+
+    addProject(today);
+    addProject(tomorrow);
+    addProject(comingSoon);
+
     // Create filler projects
     for(let i = 0; i < 2; i++) {
         let temp = createNewProject('Project-' + i);
@@ -35,7 +43,6 @@ function deleteObject(index) {
     projects[activeProject].tasks.splice(index, 1);
     displayProjects();
 }
-
 
 function setActiveProject(num) {
     activeProject = num;
@@ -96,7 +103,7 @@ function displayProjects() {
         let children = document.querySelector('.project-container').children;
         children[activeProject].style.color = 'var(--darkGrayishBlue)';
         children[activeProject].style.borderBottom = '2px dashed var(--darkGrayishBlue';
-        children[activeProject].style.fontSize = '2.7rem';
+        children[activeProject].style.fontSize = '2.5rem';
     }
 
     // display tasks (if true)
