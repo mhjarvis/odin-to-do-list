@@ -1,6 +1,7 @@
 import { createNewProject } from './Project';
 import { createTask } from './Task';
 import { initializeListeners } from './EnventControl';
+import { dateSort } from './dateSort';
 
 let projects = [];
 
@@ -11,7 +12,7 @@ const taskContainer = document.querySelector('.task-container');
 /**************** Temporary population data - DELETE ***************/
 function init() {
 
-    setActiveProject(0);
+    setActiveProject(3);
 
     let today = createNewProject('Today');
     let tomorrow = createNewProject('Tomorrow');
@@ -94,8 +95,9 @@ function displayProjects() {
             projects.splice(projects.indexOf(this), 1);
             displayProjects();
         })
-
         indProjDivs.appendChild(h5);
+
+        dateSort();
     }
 
     // highlight active object
