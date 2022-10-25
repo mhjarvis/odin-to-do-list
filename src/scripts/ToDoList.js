@@ -2,6 +2,7 @@ import { createNewProject } from './Project';
 import { createTask } from './Task';
 import { initializeListeners } from './EnventControl';
 import { dateSort } from './dateSort';
+import { isToday, parseISO } from 'date-fns';
 
 let projects = [];
 
@@ -23,18 +24,16 @@ function init() {
     addProject(comingSoon);
 
     // Create filler projects
-    for(let i = 0; i < 2; i++) {
-        let temp = createNewProject('Project-' + i);
-        addProject(temp);
-    }
+    let temp = createNewProject('Random Things');
+    addProject(temp);
 
     // Create filler tasks
-    let t = createTask('Eat Breakfast', 'Various Foods', '2022-10-10', 'high');
-    let u = createTask('Buy Christmas Presents', 'none', '2022-10-10', 'low', true);
-    let w = createTask('Buy Presents', 'none', '10/23/22', 'low', true);
-    addTask(t);
-    addTask(u);
-    addTask(w);
+    let t = createTask('Eat Breakfast', 'Various Foods', '2022-10-25', 'high');
+    let u = createTask('Buy Christmas Presents', 'none', '2022-10-25', 'low', true);
+    let w = createTask('Buy Presents', 'none', '2022-10-26', 'low', true);
+    projects[3].tasks.push(t);
+    projects[3].tasks.push(u);
+    projects[3].tasks.push(w);
 
     displayProjects();
 }
@@ -126,9 +125,9 @@ function displayProjects() {
 ///////////////
 
 function buildTaskContainer() {
-
-    
+    populateToday();
     for(let i = 0; i < projects[activeProject].tasks.length; i++) {
+
 
         // create container element
         const div = document.createElement('div');
@@ -185,6 +184,27 @@ function buildTaskContainer() {
 
         getDiv.appendChild(dateInput)
     }
+}
+
+function populateToday() {
+
+    for(let i = 0; i < projects.length; i++) {
+        for(let j = 0; j < projects[i].tasks.length; j++) {
+            console.log('testetstet');
+        }
+    }
+/*     for(let j = 0; j < projects[0].tasks.length; j++) {
+        const taskDate = projects[i].tasks[j].dueDate;
+        console.log(taskDate);
+        if(isToday(parseISO(taskDate))) {
+
+            console.log('Date is today');
+        }
+
+
+
+
+    } */
 }
 
 export { getActiveProject, setActiveProject, addProject, addTask, displayProjects, init, deleteObject, projects }
