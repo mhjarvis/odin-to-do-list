@@ -12,7 +12,7 @@ const taskContainer = document.querySelector('.task-container');
 /**************** Temporary population data - DELETE ***************/
 function init() {
 
-    setActiveProject(3);
+    setActiveProject(0);
 
     let today = createNewProject('Today');
     let tomorrow = createNewProject('Tomorrow');
@@ -87,15 +87,19 @@ function displayProjects() {
         h4.innerText = projects[i].title;
         indProjDivs.appendChild(h4);
 
-        const h5 = document.createElement('h5');
-        h5.className = 'p' + i;
-        h5.innerText = 'x';
+        if(i>=3) {
+            const h5 = document.createElement('h5');
+            h5.className = 'p' + i;
+            h5.innerText = 'x';
 
-        h5.addEventListener('click', function handleClick(event) {
-            projects.splice(projects.indexOf(this), 1);
-            displayProjects();
-        })
-        indProjDivs.appendChild(h5);
+            h5.addEventListener('click', function handleClick(event) {
+                console.log(i);
+                projects.splice(i, 1);
+                displayProjects();
+            })
+            indProjDivs.appendChild(h5);
+        }
+
 
         dateSort();
     }
@@ -114,6 +118,7 @@ function displayProjects() {
 
     }
     initializeListeners();
+    console.log(projects);
 }
 
 
