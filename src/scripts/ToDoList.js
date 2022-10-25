@@ -1,7 +1,7 @@
 import { createNewProject } from './Project';
 import { createTask } from './Task';
 import { initializeListeners } from './EnventControl';
-import { dateSort } from './dateSort';
+import { populateComingSoon, populateToday, populateTomorrow } from './dateSort';
 import { isToday, parseISO } from 'date-fns';
 
 let projects = [];
@@ -29,7 +29,7 @@ function init() {
 
     // Create filler tasks
     let t = createTask('Eat Breakfast', 'Various Foods', '2022-10-25', 'high');
-    let u = createTask('Buy Christmas Presents', 'none', '2022-10-25', 'low', true);
+    let u = createTask('Buy Christmas Presents', 'none', '2022-10-29', 'low', true);
     let w = createTask('Buy Presents', 'none', '2022-10-26', 'low', true);
     projects[3].tasks.push(t);
     projects[3].tasks.push(u);
@@ -92,15 +92,11 @@ function displayProjects() {
             h5.innerText = 'x';
 
             h5.addEventListener('click', function handleClick(event) {
-                console.log(i);
                 projects.splice(i, 1);
                 displayProjects();
             })
             indProjDivs.appendChild(h5);
         }
-
-
-        dateSort();
     }
 
     // highlight active object
@@ -117,7 +113,20 @@ function displayProjects() {
 
     }
     initializeListeners();
-    console.log(projects);
+    console.log(activeProject);
+
+    if(activeProject == 0) {
+        populateToday();
+        return;
+    } 
+    if(activeProject == 1) {
+        populateTomorrow();
+        return;
+    }
+    if(activeProject == 2) {
+        populateComingSoon();
+        return;
+    }
 }
 
 
@@ -125,9 +134,10 @@ function displayProjects() {
 ///////////////
 
 function buildTaskContainer() {
-    populateToday();
-    for(let i = 0; i < projects[activeProject].tasks.length; i++) {
 
+    console.log(activeProject)
+
+    for(let i = 0; i < projects[activeProject].tasks.length; i++) {
 
         // create container element
         const div = document.createElement('div');
@@ -135,6 +145,8 @@ function buildTaskContainer() {
         div.className = 'task';
         // div.innerText = projects[activeProject].tasks[i].title;
         taskContainer.appendChild(div);
+
+
 
         // get new div element
         const getDiv = document.getElementById(`p${getActiveProject}t${i}`);
@@ -179,32 +191,10 @@ function buildTaskContainer() {
         dateInput.value = projects[activeProject].tasks[i].dueDate;
         dateInput.min = '2022-10-01';
         dateInput.max = '2099-12-31';
-        console.log(dateInput);
 
 
         getDiv.appendChild(dateInput)
     }
-}
-
-function populateToday() {
-
-    for(let i = 0; i < projects.length; i++) {
-        for(let j = 0; j < projects[i].tasks.length; j++) {
-            console.log('testetstet');
-        }
-    }
-/*     for(let j = 0; j < projects[0].tasks.length; j++) {
-        const taskDate = projects[i].tasks[j].dueDate;
-        console.log(taskDate);
-        if(isToday(parseISO(taskDate))) {
-
-            console.log('Date is today');
-        }
-
-
-
-
-    } */
 }
 
 export { getActiveProject, setActiveProject, addProject, addTask, displayProjects, init, deleteObject, projects }
